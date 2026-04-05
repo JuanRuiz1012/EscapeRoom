@@ -1,4 +1,5 @@
 from graph.escape_graph import EscapeGraph, NODE_LOCKED
+from search import bfs_escape
 
 def build_example_graph():
      
@@ -57,3 +58,5 @@ def build_example_graph():
 if __name__ == "__main__":
     grafo = build_example_graph()
     grafo.summary()
+    
+    bfs_escape(grafo)
