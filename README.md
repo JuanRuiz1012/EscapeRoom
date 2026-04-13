@@ -9,7 +9,7 @@ búsqueda no informada (BFS o DFS) a nivel global y A\* para resolver los acerti
 - Juan Diego Ospina 2359486
 - Julian Andres Rojas 2459687
 - Mauricio Alejandro Rojas 2359701
-- Juan Felipe Ruiz 2359397s
+- Juan Felipe Ruiz 2359397
 
 ## Estructura del proyecto
 
