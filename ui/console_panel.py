@@ -48,7 +48,7 @@ class ConsolePanel(tk.Frame):
         super().__init__(parent, bg=BG, **kwargs)
         self._build()
 
-    # ── API pública ──────────────────────────────────────────────────────────
+    # API pública
 
     def log(self, msg_type: str, text: str):
         """Agrega una línea al log. msg_type ∈ MSG_COLORS."""
@@ -77,7 +77,7 @@ class ConsolePanel(tk.Frame):
         self._text.configure(state="disabled")
         self.log("info", "Consola limpiada.")
 
-    # ── Helpers semánticos ───────────────────────────────────────────────────
+    # Helpers semánticos
 
     def log_expand(self, node_id: str, path: list = None):
         path_str = f"  [{' → '.join(path)}]" if path else ""
@@ -102,7 +102,7 @@ class ConsolePanel(tk.Frame):
     def log_info(self, text: str):
         self.log("info", text)
 
-    # ── Construcción ─────────────────────────────────────────────────────────
+    # Construcción
 
     def _build(self):
         self.rowconfigure(1, weight=1)

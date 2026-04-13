@@ -39,7 +39,7 @@ class PuzzleCanvas(tk.Canvas):
 
         self.bind("<Configure>", lambda e: self.refresh())
 
-    # ── API pública ──────────────────────────────────────────────────────────
+    # API pública
 
     def load_puzzle(self, puzzle_dict):
         """
@@ -101,7 +101,7 @@ class PuzzleCanvas(tk.Canvas):
         if self.solved:
             self._draw_solved_banner()
 
-    # ── Layout automático ────────────────────────────────────────────────────
+    # Layout automático y coordenadas
 
     def _auto_layout(self, nodes, start, goal):
         """Distribuye los nodos: start a la izquierda, goal a la derecha, resto en medio."""
@@ -124,7 +124,7 @@ class PuzzleCanvas(tk.Canvas):
         nx_, ny_ = self.node_pos_norm.get(node_id, (0.5, 0.5))
         return nx_ * w, ny_ * h
 
-    # ── Dibujo ───────────────────────────────────────────────────────────────
+    # Dibujo 
 
     def _draw_idle(self):
         w, h = self.winfo_width(), self.winfo_height()

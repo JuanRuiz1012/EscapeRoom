@@ -12,10 +12,8 @@ def test_passed(nombre):
 def test_failed(nombre, detalle):
     print(f"  ❌ FAILED: {nombre} → {detalle}")
 
-# ──────────────────────────────────────────────────────────────────────
 # TEST 1: Camino óptimo (el del ejemplo del proyecto)
 # S→B→D→E cuesta 12, S→B→C→E cuesta 19 → A* debe elegir 12
-# ──────────────────────────────────────────────────────────────────────
 def test_camino_optimo():
     puzzle = {
         "nodes": ["S", "B", "C", "D", "E"],
@@ -37,9 +35,7 @@ def test_camino_optimo():
     assert solver.path == ["S","B","D","E"],    f"Camino esperado S→B→D→E, obtuvo {solver.path}"
     test_passed("Camino óptimo S→B→D→E con costo 12")
 
-# ──────────────────────────────────────────────────────────────────────
 # TEST 2: Puzzle sin solución (goal no alcanzable)
-# ──────────────────────────────────────────────────────────────────────
 def test_sin_solucion():
     puzzle = {
         "nodes": ["S", "A", "B"],
@@ -55,9 +51,7 @@ def test_sin_solucion():
     assert solved == False, "Debería retornar False cuando no hay solución"
     test_passed("Puzzle sin solución retorna False")
 
-# ──────────────────────────────────────────────────────────────────────
 # TEST 3: Camino directo (un solo paso)
-# ──────────────────────────────────────────────────────────────────────
 def test_camino_directo():
     puzzle = {
         "nodes": ["S", "E"],
@@ -75,9 +69,8 @@ def test_camino_directo():
     assert solver.path == ["S", "E"],    f"Camino esperado S→E, obtuvo {solver.path}"
     test_passed("Camino directo S→E con costo 3")
 
-# ──────────────────────────────────────────────────────────────────────
 # TEST 4: Métricas se registran correctamente
-# ──────────────────────────────────────────────────────────────────────
+
 def test_metricas():
     puzzle = {
         "nodes": ["S", "B", "C", "D", "E"],
@@ -103,9 +96,7 @@ def test_metricas():
     assert metrics["execution_time"] >= 0,       "execution_time debe ser >= 0"
     test_passed("Métricas registradas correctamente")
 
-# ──────────────────────────────────────────────────────────────────────
 # TEST 5: Log se genera correctamente
-# ──────────────────────────────────────────────────────────────────────
 def test_log():
     puzzle = {
         "nodes": ["S", "E"],
@@ -122,9 +113,7 @@ def test_log():
     test_passed("Log generado correctamente")
 
 
-# ──────────────────────────────────────────────────────────────────────
 # EJECUTAR TODOS LOS TESTS
-# ──────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print("\n══ Tests PuzzleSolver (A*) ══════════════════\n")
     tests = [

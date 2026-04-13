@@ -38,7 +38,7 @@ class PuzzleSolver:
         self.path           = []
         self.log            = []  
 
-    # ── HEURÍSTICA ────────────────────────────────────────────────────
+    # HEURÍSTICA
     # h(n) = saltos_mínimos_al_goal × costo_mínimo_de_arista
     # Siempre admisible: nunca sobreestima el costo real.
     def _compute_heuristic(self, puzzle: dict) -> dict:
@@ -64,7 +64,7 @@ class PuzzleSolver:
 
         return {n: hops[n] * min_cost for n in puzzle["nodes"]}
 
-    # ── A* ────────────────────────────────────────────────────────────
+    # A*
     def solve(self) -> bool:
         start_time = time.time()
 
@@ -103,7 +103,7 @@ class PuzzleSolver:
         self.log.append("- No solution found for puzzle.")
         return False
 
-    # ── MÉTRICAS ──────────────────────────────────────────────────────
+    # MÉTRICAS
     def get_metrics(self) -> dict:
         return {
             "nodes_expanded": self.nodes_expanded,

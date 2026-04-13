@@ -1,6 +1,6 @@
 import networkx as nx
 
-###### ESTADOS POSIBLES DE UN NODOS
+# ESTADOS POSIBLES DE UN NODOS
 NODE_SOLVED    = "solved"
 NODE_AVAILABLE = "available"
 NODE_LOCKED    = "locked"
@@ -12,11 +12,11 @@ class EscapeGraph:
         self.start_node = None
         self.goal_node = None
 
-###### CONSTRUCCION DEL GRAFO
+# CONSTRUCCION DEL GRAFO
 
     def add_node(self, node_id, status=NODE_AVAILABLE, puzzle=None):
          
-###### AGREGA UN NODO AL GRAFO
+# AGREGA UN NODO AL GRAFO
 
         self.graph.add_node(node_id, status=status, puzzle=puzzle)
 
@@ -31,7 +31,7 @@ class EscapeGraph:
     def set_goal(self, node_id):
         self.goal_node = node_id
 
-###### CONSULTAS DE ESTADO
+# CONSULTAS DE ESTADO
 
     def get_status(self, node_id):
         return self.graph.nodes[node_id]["status"]
@@ -57,17 +57,17 @@ class EscapeGraph:
     def get_all_edges(self):
         return list(self.graph.edges(data=True))
 
-###### MODIFICACION DE ESTADO
+# MODIFICACION DE ESTADO
 
     def set_status(self, node_id, status):
         self.graph.nodes[node_id]["status"] = status
 
     def unlock_node(self, node_id):
-###### DESBLOQIEO DE LOS NODOS DE FORMA PERSISTENTE
+# DESBLOQIEO DE LOS NODOS DE FORMA PERSISTENTE
         if self.is_locked(node_id):
             self.set_status(node_id, NODE_SOLVED)
 
-##### print summary
+# print summary
     def summary(self):
         print(f"\nNodos ({self.graph.number_of_nodes()}):")
         for node, data in self.graph.nodes(data=True):

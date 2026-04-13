@@ -31,7 +31,7 @@ class StatsPanel(tk.Frame):
         super().__init__(parent, bg=BG, **kwargs)
         self._build()
 
-    # ── API pública ──────────────────────────────────────────────────────────
+    # API pública
 
     def update_global(self, nodes_expanded: int, depth: int):
         self._g_nodes.set(str(nodes_expanded))
@@ -50,7 +50,7 @@ class StatsPanel(tk.Frame):
             var.set("0")
         self._time.set("0.000s")
 
-    # ── Construcción ─────────────────────────────────────────────────────────
+    # Construcción
 
     def _build(self):
         self.columnconfigure(0, weight=1)

@@ -64,14 +64,14 @@ class MainWindow:
         if escape_graph:
             self.load_graph(escape_graph)
 
-    # ── Ventana ──────────────────────────────────────────────────────────────
+    # Ventana
 
     def _build_window(self):
         self.root = tk.Tk()
         self.root.title("Escape Room Solver")
         self.root.configure(bg=BG)
         self.root.geometry("1200x720")
-        self.root.minsize(900, 600)
+        self.root.minsize(1200, 900)
 
         # Icono (opcional, falla silencioso si no existe)
         try:
@@ -79,7 +79,7 @@ class MainWindow:
         except Exception:
             pass
 
-    # ── UI ───────────────────────────────────────────────────────────────────
+    # UI
 
     def _build_ui(self):
         self.root.columnconfigure(0, weight=1)
@@ -196,7 +196,7 @@ class MainWindow:
         self.console.grid(row=0, column=0, sticky="nsew",
                            ipady=0, ipadx=0)
 
-    # ── Helpers de construcción ───────────────────────────────────────────────
+    # Helpers de construcción
 
     def _panel_header(self, parent, title, subtitle, row=0):
         f = tk.Frame(parent, bg="#0c0c18", pady=6, padx=12)
@@ -234,7 +234,7 @@ class MainWindow:
         btn.pack(side="left", padx=3)
         return btn
 
-    # ── API pública para el backend ──────────────────────────────────────────
+    # API pública para el backend
 
     def load_graph(self, escape_graph):
         """Carga y muestra un EscapeGraph en el canvas global."""
@@ -281,7 +281,7 @@ class MainWindow:
     def update_stats_puzzle(self, nodes_expanded: int, total_cost):
         self.stats.update_puzzle(nodes_expanded, total_cost)
 
-    # ── Botones ──────────────────────────────────────────────────────────────
+    # Botones
 
     def _on_algo_change(self, val):
         self.algo = val
@@ -328,7 +328,7 @@ class MainWindow:
         if self.on_reset:
             self.on_reset(self)
 
-    # ── Timer ────────────────────────────────────────────────────────────────
+    # Timer
 
     def _tick_timer(self):
         if not self._running or not self._start_time:
@@ -343,7 +343,7 @@ class MainWindow:
             self._timer_id = None
         self._running = False
 
-    # ── Arranque ─────────────────────────────────────────────────────────────
+    # Arranque
 
     def run(self):
         self.root.mainloop()

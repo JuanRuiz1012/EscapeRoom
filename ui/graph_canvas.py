@@ -2,7 +2,7 @@ import tkinter as tk
 import math
 
 
-# ── Colores por estado ──────────────────────────────────────────────────────
+# Colores por estado
 COLOR = {
     "solved":    {"fill": "#22c55e", "outline": "#16a34a", "text": "#ffffff"},
     "available": {"fill": "#3b82f6", "outline": "#2563eb", "text": "#ffffff"},
@@ -53,7 +53,7 @@ class GraphCanvas(tk.Canvas):
         self.bind("<Configure>", lambda e: self.refresh())
         self.bind("<Button-1>",  self._on_click)
 
-    # ── API pública ──────────────────────────────────────────────────────────
+    # API pública
 
     def set_graph(self, escape_graph, positions: dict = None):
         """Carga un EscapeGraph. positions = {node_id: (nx, ny)} en 0..1."""
@@ -79,7 +79,7 @@ class GraphCanvas(tk.Canvas):
         self._draw_edges()
         self._draw_nodes()
 
-    # ── Dibujo interno ───────────────────────────────────────────────────────
+    # Dibujo interno
 
     def _draw_empty(self):
         w, h = self.winfo_width(), self.winfo_height()
@@ -153,7 +153,7 @@ class GraphCanvas(tk.Canvas):
                 self.create_text(px + r - 4, py - r + 4, text="🔒",
                                  font=("", 9))
 
-    # ── Helpers de dibujo ────────────────────────────────────────────────────
+    # Helpers de dibujo
 
     def _arrow(self, x1, y1, x2, y2, color, offset):
         dx, dy = x2 - x1, y2 - y1
@@ -175,7 +175,7 @@ class GraphCanvas(tk.Canvas):
             x1_, y1_ = cx + r * math.cos(a1), cy + r * math.sin(a1)
             self.create_line(x0, y0, x1_, y1_, fill=color, width=1)
 
-    # ── Eventos ──────────────────────────────────────────────────────────────
+    # Eventos
 
     def _on_click(self, event):
         if not self.on_node_click:

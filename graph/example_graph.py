@@ -3,14 +3,14 @@ from search import bfs_escape
 
 def build_example_graph():
      
-##### CREACIÓN DEL GRAFO
+# CREACIÓN DEL GRAFO
 
     g = EscapeGraph()
 
-##### PUZZLE QUE DESBLOQUEA EL NODO """C"""
+# PUZZLE QUE DESBLOQUEA EL NODO "C"
     puzzle_C = {
         "nodes": ["S", "B", "C", "D", "E"],
-###### EDGES SON LAS ARISTAS 
+# EDGES SON LAS ARISTAS 
         "edges": [
             ("S", "B", 7),
             ("B", "C", 8),
@@ -22,7 +22,7 @@ def build_example_graph():
         "goal":  "E"
     }
 
-##### NODOS DEL GRAFO
+# NODOS DEL GRAFO
     g.add_node("A")
     g.add_node("B")
     g.add_node("C", status=NODE_LOCKED, puzzle=puzzle_C)
@@ -35,7 +35,7 @@ def build_example_graph():
     g.add_node("L")
     g.add_node("M")
 
-##### ARISTAS DEL GRAFO
+# ARISTAS DEL GRAFO
     g.add_edge("A", "B")
     g.add_edge("A", "E")
     g.add_edge("B", "C")
@@ -48,7 +48,7 @@ def build_example_graph():
     g.add_edge("I", "L")
     g.add_edge("K", "M")
 
-######## INICIO DEL GRAFO Y LA META 
+# INICIO DEL GRAFO Y LA META 
     g.set_start("A")
     g.set_goal("L")
 
