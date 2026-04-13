@@ -17,17 +17,6 @@ NODE_RADIUS = 22
 
 
 class PuzzleCanvas(tk.Canvas):
-    """
-    Canvas que muestra el subgrafo del puzzle (búsqueda informada A*).
-
-    API:
-        canvas.load_puzzle(puzzle_dict)     # carga el puzzle desde el nodo bloqueado
-        canvas.set_explored(node_id)        # marca un nodo como explorado
-        canvas.set_active(node_id)          # resalta nodo en expansión actual
-        canvas.mark_solved()                # resalta el nodo goal como resuelto
-        canvas.reset()                      # limpia todo
-        canvas.refresh()                    # redibuja
-    """
 
     def __init__(self, parent, **kwargs):
         super().__init__(parent, bg=BG, highlightthickness=0, **kwargs)
@@ -42,15 +31,6 @@ class PuzzleCanvas(tk.Canvas):
     # API pública
 
     def load_puzzle(self, puzzle_dict):
-        """
-        puzzle_dict tiene la forma:
-            {
-                "nodes": [...],
-                "edges": [(from, to, cost), ...],
-                "start": "...",
-                "goal":  "..."
-            }
-        """
         self.puzzle      = puzzle_dict
         self.solved      = False
         self.active_node = None

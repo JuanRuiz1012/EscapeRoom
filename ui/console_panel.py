@@ -30,19 +30,6 @@ PREFIX = {
 
 
 class ConsolePanel(tk.Frame):
-    """
-    Consola de ejecución con mensajes coloreados.
-
-    API:
-        console.log(msg_type, text)
-        console.clear()
-        console.log_expand(node_id, path=None)
-        console.log_locked(node_id)
-        console.log_unlock(node_id)
-        console.log_puzzle_step(node_id)
-        console.log_puzzle_solved(node_id)
-        console.log_goal_reached(node_id)
-    """
 
     def __init__(self, parent, **kwargs):
         super().__init__(parent, bg=BG, **kwargs)

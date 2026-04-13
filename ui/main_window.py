@@ -19,32 +19,6 @@ ALGO_LABELS = {"bfs": "BFS", "dfs": "DFS"}
 
 
 class MainWindow:
-    """
-    Ventana principal del Escape Room Solver.
-
-    Uso típico:
-        from ui.main_window import MainWindow
-        from graph.example_graph import build_example_graph
-
-        escape_graph = build_example_graph()
-        app = MainWindow(escape_graph)
-        app.run()
-
-    Para conectar con el solver del backend, usa los callbacks:
-        app.on_run   = my_solver_function   # recibe (escape_graph, algo, app)
-        app.on_step  = my_step_function
-        app.on_reset = my_reset_function
-
-    Desde el solver puedes llamar:
-        app.notify_expand(node_id, path)
-        app.notify_locked(node_id)
-        app.notify_puzzle_start(puzzle_dict)
-        app.notify_puzzle_step(node_id)
-        app.notify_puzzle_solved(goal_node, unlocked_node)
-        app.notify_goal_reached(node_id)
-        app.update_stats_global(nodes_expanded, depth)
-        app.update_stats_puzzle(nodes_expanded, total_cost)
-    """
 
     def __init__(self, escape_graph=None):
         self.escape_graph = escape_graph

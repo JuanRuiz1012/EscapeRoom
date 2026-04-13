@@ -15,17 +15,6 @@ ACCENT_PURPLE = "#a855f7"
 
 
 class StatsPanel(tk.Frame):
-    """
-    Panel de estadísticas dividido en dos secciones:
-        - Global Search  (búsqueda no informada)
-        - Local Puzzle   (A*)
-
-    API:
-        panel.update_global(nodes_expanded, depth)
-        panel.update_puzzle(nodes_expanded, total_cost)
-        panel.set_time(seconds_float)
-        panel.reset()
-    """
 
     def __init__(self, parent, **kwargs):
         super().__init__(parent, bg=BG, **kwargs)

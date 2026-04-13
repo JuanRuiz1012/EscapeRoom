@@ -7,17 +7,6 @@ from collections import deque
 
 
 class PuzzleSolver:
-    """
-    Resuelve el acertijo de un nodo bloqueado usando A*.
-
-    Recibe el dict 'puzzle' que ya viene definido en example_graph.py:
-        {
-            "nodes": [...],
-            "edges": [(desde, hasta, costo), ...],
-            "start": "S",
-            "goal":  "E"
-        }
-    """
 
     def __init__(self, puzzle: dict):
         self.start = puzzle["start"]

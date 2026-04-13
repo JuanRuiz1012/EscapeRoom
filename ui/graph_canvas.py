@@ -34,14 +34,6 @@ DEFAULT_POSITIONS = {
 
 
 class GraphCanvas(tk.Canvas):
-    """
-    Canvas que dibuja el grafo global del Escape Room.
-
-    Uso desde el exterior:
-        canvas.set_graph(escape_graph)          # carga el grafo
-        canvas.set_expanding(node_id)           # resalta nodo que se expande
-        canvas.refresh()                        # redibuja
-    """
 
     def __init__(self, parent, **kwargs):
         super().__init__(parent, bg=BG, highlightthickness=0, **kwargs)
